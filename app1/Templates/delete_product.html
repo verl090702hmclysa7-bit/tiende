@@ -1,0 +1,29 @@
+{% extends 'extras/navegacion.html' %}
+{% load static %}
+
+{% block pag %}
+
+<h1>Eliminar Producto</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input 
+        type="text" 
+        name="kword" 
+        placeholder="Nombre del producto a eliminar" 
+        class="textinp"
+    >
+
+    <button type="submit">Eliminar</button>
+</form>
+
+{% if mensaje %}
+    <p style="color: rgb(0, 255, 0);">{{ mensaje }}</p>
+{% endif %}
+
+{% if error %}
+    <p style="color: rgb(255, 0, 0);">{{ error }}</p>
+{% endif %}
+
+{% endblock %}

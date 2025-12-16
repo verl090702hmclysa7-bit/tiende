@@ -1,0 +1,196 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff0080, #7928ca);
+    line-height: 1.6;
+    color: #2c2c2c;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #3a0ca3, #7209b7);
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(114, 9, 183, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 18px 24px;
+    display: block;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+}
+
+.menu > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-bottom: 3px solid #ffd60a;
+}
+
+/* Flecha submenú */
+.submenu-toggle::after {
+    content: " ▾";
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+/* ===== SUBMENÚ ===== */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 8px 0;
+    list-style: none;
+    border-radius: 0 0 8px 8px;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+    border-top: 4px solid #ffbe0b;
+}
+
+.submenu-container:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu li a {
+    color: #2c2c2c;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 12px 24px;
+    display: block;
+    transition: 0.25s ease;
+    border-left: 4px solid transparent;
+}
+
+.submenu li a:hover {
+    background-color: #fff1c1;
+    color: #7209b7;
+    border-left: 4px solid #00f5d4;
+}
+
+/* ===== CONTENIDO ===== */
+.all {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all h1 {
+    font-size: 2.4rem;
+    color: #7209b7;
+    margin-bottom: 25px;
+    border-bottom: 4px solid #ffbe0b;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/* Formularios */
+.all form {
+    background: #fdf4ff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #e0aaff;
+}
+
+.all form input,
+.all form select,
+.all form textarea {
+    border: 2px solid #c77dff;
+}
+
+.all form input:focus,
+.all form select:focus,
+.all form textarea:focus {
+    border-color: #00f5d4;
+    outline: none;
+}
+
+/* Botones */
+.all button,
+.all input[type="submit"],
+.all .btn {
+    background: linear-gradient(135deg, #00f5d4, #06d6a0);
+    color: #000000;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.all button:hover {
+    background: linear-gradient(135deg, #06d6a0, #00f5d4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 245, 212, 0.6);
+}
+
+/* Alertas */
+.all .alert-success {
+    background: #d8f3dc;
+    border: 1px solid #52b788;
+    color: #1b4332;
+}
+
+.all .alert-error {
+    background: #ffe5e5;
+    border: 1px solid #ff6b6b;
+    color: #9d0208;
+}
+
+/* Imágenes */
+.all img {
+    max-width: 400px !important;
+    max-height: 300px !important;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(114, 9, 183, 0.4);
+    object-fit: contain;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .submenu {
+        border-left: 4px solid #ffbe0b;
+    }
+
+    .all img {
+        max-width: 90% !important;
+        max-height: 240px !important;
+    }
+}
